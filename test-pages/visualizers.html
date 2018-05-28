@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>KITT Visualizer Test</title>
+
+		<style>
+			#visualKitt {
+				width:fit-content;
+				margin:30px 20px 20px 20px;
+				border:1px solid black;
+				padding:0 0 0 50px;
+			}
+			#visualKitt > div {
+				display:inline-block;
+				width:100px;
+				height:430px;
+				margin-left:-50px;
+			}
+			#visualKitt > div > div {
+				width:40px;
+				height:20px;
+				background-color:darkred;
+				margin:8px auto;
+				border-radius:2.5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="visualKitt">
+			<div id="kittL">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div id="kittM">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div id="kittR">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<button class="runVisualizer">Run Kitt</button>
+		</div>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				var kitt = {
+					analyser:null,
+					audio:null,
+					audioSrc:null,
+					barsL:[],
+					barsM:[],
+					barsR:[],
+					ctx:null,
+					frequencyData:null,
+					updateTick:null,
+					renderFrame:function(){
+						kitt.updateTick = requestAnimationFrame(kitt.renderFrame);
+
+						kitt.analyser.getByteFrequencyData(kitt.frequencyData);
+
+						$(kitt.barsL[0]).css("background-color","rgb("+(100 + (kitt.frequencyData[i] * 1/14))+",0,0)");
+
+						var maxBars = (kitt.barsL.length / 2) - 1;
+
+						for(var i = 0; i < maxBars; i++){
+							var bar = kitt.barsL[i];
+							var barInverse = kitt.barsL[((maxBars + 1) * 2) - i];
+
+							$(bar).css("background-color","rgb("+(100 + (kitt.frequencyData[i] * i/maxBars))+",0,0)");
+							$(barInverse).css("background-color","rgb("+(100 + (kitt.frequencyData[i] * i/maxBars))+",0,0)");
+						}
+
+						$(kitt.barsL[maxBars + 1]).css("background-color","rgb("+(100 + (kitt.frequencyData[maxBars + 1]))+",0,0)");
+					}
+				}
+
+				function createVisualizer(calledFrom){
+					if($(calledFrom).attr("id") == "visualKitt"){
+						kitt.barsL = $("#kittL").children();
+						kitt.barsM = $("#kittM").children();
+						kitt.barsR = $("#kittR").children();
+
+						for(var i = 0; i < kitt.barsM.length; i++){
+							$(kitt.barsL[i]).css("background-color","rgb(100,0,0)");
+							$(kitt.barsM[i]).css("background-color","rgb(100,0,0)");
+							$(kitt.barsR[i]).css("background-color","rgb(100,0,0)");
+						}
+
+						kitt.audio = new Audio("https://dl.dropboxusercontent.com/s/9pamibo40ycabe1/_EnV_%20-%20Heaven.mp3");
+						kitt.audio.crossOrigin = "anonymous";
+						kitt.ctx = new AudioContext();
+						kitt.audioSrc = kitt.ctx.createMediaElementSource(kitt.audio);
+						kitt.analyser = kitt.ctx.createAnalyser();
+
+						kitt.audioSrc.connect(kitt.analyser);
+
+						kitt.frequencyData = new Uint8Array(kitt.analyser.frequencyBinCount);
+
+						kitt.audio.play();
+						kitt.updateTick = requestAnimationFrame(kitt.renderFrame);
+					}
+				}
+
+				function init(){
+					$(".runVisualizer").click(function(){
+						createVisualizer($(this).parent());
+					});
+				}
+
+				init();
+			});
+		</script>
+	</body>
+</html>
