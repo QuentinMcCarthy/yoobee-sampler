@@ -10,6 +10,7 @@
 				margin:30px 20px 20px 20px;
 				border:1px solid black;
 				padding:0 0 0 50px;
+				background-color:black;
 			}
 			#visualKitt > div {
 				display:inline-block;
@@ -20,7 +21,6 @@
 			#visualKitt > div > div {
 				width:40px;
 				height:20px;
-				background-color:darkred;
 				margin:8px auto;
 				border-radius:2.5px;
 			}
@@ -106,22 +106,22 @@
 					var barMax = kitt.barsM.length;
 					var forMax = Math.floor(barMax / 2);
 
-					var freq = 50;
+					var freq = kitt.frequencyData[50];
 					var percentile = 0.60;
 
-					$(kitt.barsL[forMax]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * percentile))+",0,0)");
-					$(kitt.barsM[forMax]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq]))+",0,0)");
-					$(kitt.barsR[forMax]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * percentile))+",0,0)");
+					$(kitt.barsL[forMax]).css("background-color","rgb("+(0 + (freq * percentile))+",0,0)");
+					$(kitt.barsM[forMax]).css("background-color","rgb("+(0 + (freq))+",0,0)");
+					$(kitt.barsR[forMax]).css("background-color","rgb("+(0 + (freq * percentile))+",0,0)");
 
 					for(var i = 1; i < forMax; i++){
-						$(kitt.barsL[forMax - i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax) * percentile))+",0,0)");
-						$(kitt.barsL[forMax + i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsL[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsL[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
 
-						$(kitt.barsM[forMax - i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax)))+",0,0)");
-						$(kitt.barsM[forMax + i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax)))+",0,0)");
+						$(kitt.barsM[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
+						$(kitt.barsM[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
 
-						$(kitt.barsR[forMax - i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax) * percentile))+",0,0)");
-						$(kitt.barsR[forMax + i]).css("background-color","rgb("+(100 + (kitt.frequencyData[freq] * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsR[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsR[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
 					}
 				}
 			}
@@ -132,10 +132,12 @@
 					kitt.barsM = $("#kittM").children();
 					kitt.barsR = $("#kittR").children();
 
+					var bgColor = "rgb(0,0,0)";
+
 					for(var i = 0; i < kitt.barsM.length; i++){
-						$(kitt.barsL[i]).css("background-color","rgb(100,0,0)");
-						$(kitt.barsM[i]).css("background-color","rgb(100,0,0)");
-						$(kitt.barsR[i]).css("background-color","rgb(100,0,0)");
+						$(kitt.barsL[i]).css("background-color",bgColor);
+						$(kitt.barsM[i]).css("background-color",bgColor);
+						$(kitt.barsR[i]).css("background-color",bgColor);
 					}
 
 					kitt.audio = new Audio("https://dl.dropboxusercontent.com/s/9pamibo40ycabe1/_EnV_%20-%20Heaven.mp3");
