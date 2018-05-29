@@ -109,19 +109,19 @@
 					var freq = kitt.frequencyData[50];
 					var percentile = 0.60;
 
-					$(kitt.barsL[forMax]).css("background-color","rgb("+(0 + (freq * percentile))+",0,0)");
-					$(kitt.barsM[forMax]).css("background-color","rgb("+(0 + (freq))+",0,0)");
-					$(kitt.barsR[forMax]).css("background-color","rgb("+(0 + (freq * percentile))+",0,0)");
+					$(kitt.barsL[forMax]).css("background-color","rgb("+Math.round(0 + (freq * percentile))+",0,0)");
+					$(kitt.barsM[forMax]).css("background-color","rgb("+Math.round(0 + (freq))+",0,0)");
+					$(kitt.barsR[forMax]).css("background-color","rgb("+Math.round(0 + (freq * percentile))+",0,0)");
 
 					for(var i = 1; i < forMax; i++){
-						$(kitt.barsL[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
-						$(kitt.barsL[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsL[forMax - i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsL[forMax + i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
 
-						$(kitt.barsM[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
-						$(kitt.barsM[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
+						$(kitt.barsM[forMax - i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
+						$(kitt.barsM[forMax + i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax)))+",0,0)");
 
-						$(kitt.barsR[forMax - i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
-						$(kitt.barsR[forMax + i]).css("background-color","rgb("+(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsR[forMax - i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
+						$(kitt.barsR[forMax + i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
 					}
 				}
 			}
@@ -140,7 +140,7 @@
 						$(kitt.barsR[i]).css("background-color",bgColor);
 					}
 
-					kitt.audio = new Audio("https://dl.dropboxusercontent.com/s/9pamibo40ycabe1/_EnV_%20-%20Heaven.mp3");
+					kitt.audio = new Audio("https://dl.dropboxusercontent.com/s/mw28fr4lt64mhzt/Getting%20Stronger%20-%20Michelle%20Creber%20Black%20Gryph0n%20Baasik.mp3");
 					kitt.audio.crossOrigin = "anonymous";
 					kitt.ctx = new AudioContext();
 					kitt.audioSrc = kitt.ctx.createMediaElementSource(kitt.audio);
