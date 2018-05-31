@@ -1,0 +1,94 @@
+*{
+  background: black;
+  margin: 0.5em;
+  margin-left: 3.5em;
+}
+
+.panel1{
+  height: 80vh;
+  width: 25vw;
+  border: 1px solid white;
+  margin: .5em;
+  float: left;
+}
+
+.panelBtn1{
+  margin-left: 0;
+  text-align: center;
+  margin-top: 0;
+}
+
+.panel1::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.panel2{
+  height: 80vh;
+  width: 25vw;
+  border: 1px solid white;
+  float: left;
+  margin-left: 0;
+}
+
+.panelBtn2{
+  margin-left: 0;
+  text-align: center;
+  padding-top: 10em;
+}
+
+.panel3{
+  height: 80vh;
+  width: 25vw;
+  border: 1px solid white;
+  float: left;
+  margin-left: 0;
+}
+
+.panelBtn3{
+  margin-left: 0;
+  text-align: center;
+  padding-top: 21em;
+}
+
+.yellowBtn{
+  height: 5em;
+  width: 15em;
+  background-color: yellow;
+  border-radius: 1em;
+  margin-left: .5em;
+}
+
+.redBtn{
+  height: 5em;
+  width: 15em;
+  background-color: red;
+  border-radius: 1em;
+  margin-left: .5em;
+}
+
+.pinkBtn{
+  height: 4em;
+  width: 15em;
+  background-color: pink;
+  margin-left: .5em;
+}
+
+.yellowBtn_amp{
+  height: 4em;
+  width: 15em;
+  background-color: yellow;
+  margin-left: .5em;
+}
+
+.blueBtn{
+  height: 4em;
+  width: 15em;
+  background-color: blue;
+  margin-left: .5em;
+}
+
+h1{
+  color: white;
+}
