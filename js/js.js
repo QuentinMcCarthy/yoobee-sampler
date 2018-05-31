@@ -112,13 +112,13 @@ var sampler = {
 			// Cross Origin prevents CORS restriction
 			sampler.kitt.audio.crossOrigin = "anonymous";
 
-			sampler.kitt.play();
+			sampler.kitt.createVisualizer();
 		},
 		pause:function(){
 			sampler.kitt.audio.pause();
 		},
 		play:function(){
-			sampler.kitt.createVisualizer();
+			sampler.kitt.audio.play();
 		}
 	}
 };
