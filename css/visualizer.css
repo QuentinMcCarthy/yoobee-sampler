@@ -1,0 +1,25 @@
+/* REQUIRED FOR VISUALIZER */
+#visualKitt {
+	width: fit-content;
+	margin: 2px auto;
+	border: 1px solid black;
+	padding: 0 0 0 50px;
+	background-color: black;
+}
+
+#visualKitt > div {
+	display: inline-block;
+	width: 100px;
+	height: 430px;
+	margin-left: -50px;
+	background: transparent;
+}
+
+#visualKitt > div > div {
+	width: 40px;
+	height: 20px;
+	margin: 8px auto;
+	border-radius: 2.5px;
+}
+
+/*# sourceMappingURL=visualizer.css.map */

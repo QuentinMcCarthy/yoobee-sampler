@@ -6,6 +6,29 @@ var sampler = {
 
 			// Cross Origin prevents CORS restriction
 			sampler.player.audio.crossOrigin = "anonymous";
+
+			sampler.player.play();
+		},
+		setVol:function(vol){
+			// If the audio exists
+			if(typeof sampler.player.audio != "undefined"){
+				// If the given volume is a number
+				if(typeof vol == "number"){
+					if(sampler.player.audio != null){
+						// If the volume is within the valid range
+						if(vol <= 1 && vol >= 0){
+							sampler.player.audio.volume = vol;
+							sampler.player.volume = vol;
+						}
+					}
+				}
+			}
+		},
+		pause:function(){
+			sampler.player.audio.pause();
+		},
+		play:function(){
+			sampler.player.audio.play();
 		}
 	},
 	kitt:{
@@ -48,7 +71,7 @@ var sampler = {
 				$(sampler.kitt.barsR[forMax + i]).css("background-color","rgb("+Math.round(0 + (freq * ((forMax - i) / forMax) * percentile))+",0,0)");
 			}
 		},
-		createVisualizer:function(calledFrom){
+		createVisualizer:function(){
 			// Get the bars
 			sampler.kitt.barsL = $("#kittL").children();
 			sampler.kitt.barsM = $("#kittM").children();
@@ -82,13 +105,38 @@ var sampler = {
 
 			// Cross Origin prevents CORS restriction
 			sampler.kitt.audio.crossOrigin = "anonymous";
-		}
-	},
-	init:function(){
 
+			sampler.kitt.play();
+		},
+		pause:function(){
+			sampler.kitt.audio.pause();
+		},
+		play:function(){
+			sampler.kitt.createVisualizer();
+		}
 	}
-}
+};
 
 $(document).ready(function(){
-	sampler.init();
+	$(".soundBtn").click(function(){
+		sampler.player.initAudio($(this).attr("data-audio"));
+		sampler.kitt.initAudio($(this).attr("data-audio"));
+	});
+
+	$("#pauseBtn").click(function(){
+		if($(this).attr("data-toggle") == "pause"){
+			sampler.player.pause();
+			sampler.kitt.pause();
+
+			$(this).text("PLAY");
+			$(this).attr("data-toggle","play");
+		}
+		else{
+			sampler.player.play();
+			sampler.kitt.play();
+
+			$(this).text("PAUSE");
+			$(this).attr("data-toggle","pause");
+		}
+	});
 });
