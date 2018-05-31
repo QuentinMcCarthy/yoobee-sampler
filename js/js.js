@@ -26,9 +26,15 @@ var sampler = {
 		},
 		pause:function(){
 			sampler.player.audio.pause();
+
+			$("#pauseBtn").text("PLAY");
+			$("#pauseBtn").attr("data-toggle","play");
 		},
 		play:function(){
 			sampler.player.audio.play();
+
+			$("#pauseBtn").text("PAUSE");
+			$("#pauseBtn").attr("data-toggle","pause");
 		}
 	},
 	kitt:{
@@ -127,16 +133,10 @@ $(document).ready(function(){
 		if($(this).attr("data-toggle") == "pause"){
 			sampler.player.pause();
 			sampler.kitt.pause();
-
-			$(this).text("PLAY");
-			$(this).attr("data-toggle","play");
 		}
 		else{
 			sampler.player.play();
 			sampler.kitt.play();
-
-			$(this).text("PAUSE");
-			$(this).attr("data-toggle","pause");
 		}
 	});
 });
