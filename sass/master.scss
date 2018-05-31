@@ -1,10 +1,11 @@
 // Variables
 $primaryColor:black;
+$fontFamily: 'Eurostile';
 
-$panelHeight:50vh;
+$panelHeight: 75vh;
 $panelBorder:1px solid white;
 $panelPadding:45px;
-$panelBtnMargin:160px;
+$panelBtnMargin:320px;
 $panelWidth:15vw;
 $panelMaxWidth:288px;
 
@@ -17,10 +18,13 @@ $controlsWidth:15em;
 
 body {
 	background-color:$primaryColor;
+	font-family: $fontFamily;
+	margin-left: 25vw;
 }
 
 h1{
   color: white;
+  font-family: $fontFamily;
 }
 
 .panel1{
@@ -72,37 +76,63 @@ h1{
 }
 
 .soundBtn {
-	height:5em;
-	width:15em;
+	height:4em;
+	width:8em;
 	border-radius:1em;
+	font-family: $fontFamily;
+	font-weight: 900;
+	font-size: 17px;
+	border: none;
 }
 
 .yellowBtn{
-  background-color: yellow;
+  background-color: #FFFD73;
 }
 
 .redBtn{
-  background-color: red;
+  background-color: #B9000D;
+}
+
+@mixin btnStyleChange {
+	font-size: 16px;
+	font-weight: 900;
+	width: 8em;
+	height: 3em;
 }
 
 .pinkBtn{
   height:$controlsHeight;
   width:$controlsWidth;
-  background-color: pink;
+  background-color: #FF4B5A;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 0;
+  font-family: $fontFamily;
+  @include btnStyleChange;
 }
 
 .yellowBtn_amp{
   height:$controlsHeight;
   width:$controlsWidth;
   background-color: yellow;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 0;
+  font-family: $fontFamily;
+  @include btnStyleChange;
 }
 
 .blueBtn{
   height:$controlsHeight;
   width:$controlsWidth;
-  background-color: blue;
+  background-color: #485DF8;
+  border: none;
+  border-radius: 0;
+  font-family: $fontFamily;
+  @include btnStyleChange;
 }
 
 .title {
-
+	width: $panelWidth + $panelWidth + 20vw;
+	text-align: center;
 }
