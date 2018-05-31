@@ -38,7 +38,8 @@ h1 {
   width: 15vw;
   max-width: 288px;
   border: 1px solid white;
-  float: left; }
+  float: left;
+  padding: 45px; }
 
 .panelBtn3 {
   text-align: center;
