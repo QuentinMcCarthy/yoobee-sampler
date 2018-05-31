@@ -1,0 +1,107 @@
+// Variables
+$primaryColor:black;
+
+$panelHeight:50vh;
+$panelBorder:1px solid white;
+$panelPadding:45px;
+$panelBtnMargin:160px;
+$panelWidth:15vw;
+$panelMaxWidth:288px;
+
+$controlsHeight:4em;
+$controlsWidth:15em;
+
+* {
+	box-sizing:border-box;
+}
+
+body {
+	background-color:$primaryColor;
+}
+
+h1{
+  color: white;
+}
+
+.panel1{
+  height:$panelHeight;
+  width:$panelWidth;
+  max-width:$panelMaxWidth;
+  border:$panelBorder;
+  float: left;
+  padding:$panelPadding;
+}
+
+.panelBtn1{
+  text-align:center;
+
+  div {
+	  margin:5px 0;
+  }
+}
+
+.panelBtn2{
+  text-align: center;
+  margin-top:$panelBtnMargin;
+
+  div {
+	  margin:5px 0;
+  }
+}
+
+.panel2{
+  height:$panelHeight;
+  width:20vw;
+  border:$panelBorder;
+  float: left;
+  padding:25px;
+}
+
+.panel3{
+  height: $panelHeight;
+  width:$panelWidth;
+  max-width:$panelMaxWidth;
+  border:$panelBorder;
+  float: left;
+}
+
+.panelBtn3{
+  text-align: center;
+  margin-top:40px
+}
+
+.soundBtn {
+	height:5em;
+	width:15em;
+	border-radius:1em;
+}
+
+.yellowBtn{
+  background-color: yellow;
+}
+
+.redBtn{
+  background-color: red;
+}
+
+.pinkBtn{
+  height:$controlsHeight;
+  width:$controlsWidth;
+  background-color: pink;
+}
+
+.yellowBtn_amp{
+  height:$controlsHeight;
+  width:$controlsWidth;
+  background-color: yellow;
+}
+
+.blueBtn{
+  height:$controlsHeight;
+  width:$controlsWidth;
+  background-color: blue;
+}
+
+.title {
+	
+}

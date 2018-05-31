@@ -1,94 +1,73 @@
-*{
-  background: black;
-  margin: 0.5em;
-  margin-left: 3.5em;
-}
+* {
+  box-sizing: border-box; }
 
-.panel1{
-  height: 80vh;
-  width: 25vw;
-  border: 1px solid white;
-  margin: .5em;
-  float: left;
-}
+body {
+  background-color: black; }
 
-.panelBtn1{
-  margin-left: 0;
-  text-align: center;
-  margin-top: 0;
-}
+h1 {
+  color: white; }
 
-.panel1::after{
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.panel2{
-  height: 80vh;
-  width: 25vw;
+.panel1 {
+  height: 50vh;
+  width: 15vw;
+  max-width: 288px;
   border: 1px solid white;
   float: left;
-  margin-left: 0;
-}
+  padding: 45px; }
 
-.panelBtn2{
-  margin-left: 0;
+.panelBtn1 {
+  text-align: center; }
+  .panelBtn1 div {
+    margin: 5px 0; }
+
+.panelBtn2 {
   text-align: center;
-  padding-top: 10em;
-}
+  margin-top: 160px; }
+  .panelBtn2 div {
+    margin: 5px 0; }
 
-.panel3{
-  height: 80vh;
-  width: 25vw;
+.panel2 {
+  height: 50vh;
+  width: 20vw;
   border: 1px solid white;
   float: left;
-  margin-left: 0;
-}
+  padding: 25px; }
 
-.panelBtn3{
-  margin-left: 0;
+.panel3 {
+  height: 50vh;
+  width: 15vw;
+  max-width: 288px;
+  border: 1px solid white;
+  float: left; }
+
+.panelBtn3 {
   text-align: center;
-  padding-top: 21em;
-}
+  margin-top: 40px; }
 
-.yellowBtn{
+.soundBtn {
   height: 5em;
   width: 15em;
-  background-color: yellow;
-  border-radius: 1em;
-  margin-left: .5em;
-}
+  border-radius: 1em; }
 
-.redBtn{
-  height: 5em;
-  width: 15em;
-  background-color: red;
-  border-radius: 1em;
-  margin-left: .5em;
-}
+.yellowBtn {
+  background-color: yellow; }
 
-.pinkBtn{
+.redBtn {
+  background-color: red; }
+
+.pinkBtn {
   height: 4em;
   width: 15em;
-  background-color: pink;
-  margin-left: .5em;
-}
+  background-color: pink; }
 
-.yellowBtn_amp{
+.yellowBtn_amp {
   height: 4em;
   width: 15em;
-  background-color: yellow;
-  margin-left: .5em;
-}
+  background-color: yellow; }
 
-.blueBtn{
+.blueBtn {
   height: 4em;
   width: 15em;
-  background-color: blue;
-  margin-left: .5em;
-}
+  background-color: blue; }
 
-h1{
-  color: white;
-}
+/*# sourceMappingURL=master.css.map */
